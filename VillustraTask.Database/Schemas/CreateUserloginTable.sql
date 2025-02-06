@@ -1,13 +1,4 @@
--- CreateUserloginTable.sql
-
-USE VillustraTask;
-GO
-
-IF OBJECT_ID('dbo.Userlogin', 'U') IS NOT NULL
-    DROP TABLE dbo.Userlogin;
-GO
-
-CREATE TABLE dbo.Userlogin
+﻿CREATE TABLE dbo.Userlogin
 (
     UserId NVARCHAR(255) PRIMARY KEY, -- Email address as primary key
     Password NVARCHAR(255) NOT NULL,

@@ -1,0 +1,5 @@
+﻿# Ignore Visual Studio specific files and folders
+/.vs/
+/VillustraTask.Database/*.dbmdl
+/VillustraTask.Database/*.jfm
+/VillustraTask.Database/*.sqlproj

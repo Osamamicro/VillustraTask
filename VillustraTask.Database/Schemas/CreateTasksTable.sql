@@ -1,12 +1,4 @@
--- CreateTasksTable.sql
-
-USE VillustraTask;
-GO
-
-IF OBJECT_ID('dbo.Tasks', 'U') IS NOT NULL
-    DROP TABLE dbo.Tasks;
-GO
-
+﻿
 CREATE TABLE dbo.Tasks
 (
     TaskId INT IDENTITY(1,1) PRIMARY KEY,
