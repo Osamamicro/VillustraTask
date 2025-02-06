@@ -1,11 +1,4 @@
-﻿USE VillustraTask;
-GO
-
-IF OBJECT_ID('dbo.sp_GetTasks', 'P') IS NOT NULL
-    DROP PROCEDURE dbo.sp_GetTasks;
-GO
-
-CREATE PROCEDURE dbo.sp_GetTasks
+﻿CREATE PROCEDURE dbo.sp_GetTasks
 AS
 BEGIN
     SET NOCOUNT ON;

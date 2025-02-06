@@ -1,10 +1,4 @@
-﻿USE VillustraTask;
-GO
-
-IF OBJECT_ID('dbo.sp_InsertTask', 'P') IS NOT NULL
-    DROP PROCEDURE dbo.sp_InsertTask;
-GO
-
+﻿
 CREATE PROCEDURE dbo.sp_InsertTask
     @TaskName NVARCHAR(255),
     @TaskDescription NVARCHAR(MAX),

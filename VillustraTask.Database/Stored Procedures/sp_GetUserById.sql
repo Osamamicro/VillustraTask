@@ -1,11 +1,4 @@
-﻿USE VillustraTask;
-GO
-
-IF OBJECT_ID('dbo.sp_GetUserById', 'P') IS NOT NULL
-    DROP PROCEDURE dbo.sp_GetUserById;
-GO
-
-CREATE PROCEDURE dbo.sp_GetUserById
+﻿CREATE PROCEDURE dbo.sp_GetUserById
     @UserId NVARCHAR(255)
 AS
 BEGIN

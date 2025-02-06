@@ -1,10 +1,4 @@
-﻿USE VillustraTask;
-GO
-
-IF OBJECT_ID('dbo.sp_InsertUserlogin', 'P') IS NOT NULL
-    DROP PROCEDURE dbo.sp_InsertUserlogin;
-GO
-
+﻿
 CREATE PROCEDURE dbo.sp_InsertUserlogin
     @UserId NVARCHAR(255),
     @Password NVARCHAR(255),
