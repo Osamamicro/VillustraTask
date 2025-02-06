@@ -3,3 +3,8 @@
 /VillustraTask.Database/*.dbmdl
 /VillustraTask.Database/*.jfm
 /VillustraTask.Database/*.sqlproj
+VillustraTask.Database/obj/Debug/VillustraTask.Database.sqlproj.FileListAbsolute.txt
+
+# Ignore bin and obj folders
+bin/
+obj/
