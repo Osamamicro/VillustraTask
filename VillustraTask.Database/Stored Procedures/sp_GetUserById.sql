@@ -1,4 +1,4 @@
-USE VillustraTask;
+﻿USE VillustraTask;
 GO
 
 IF OBJECT_ID('dbo.sp_GetUserById', 'P') IS NOT NULL

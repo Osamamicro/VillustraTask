@@ -1,4 +1,4 @@
--- SeedData.sql
+﻿-- SeedData.sql
 
 USE VillustraTask;
 GO

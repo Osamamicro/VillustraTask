@@ -1,4 +1,4 @@
--- CreateDatabase.sql
+﻿-- CreateDatabase.sql
 
 IF DB_ID('VillustraTask') IS NOT NULL
 BEGIN
