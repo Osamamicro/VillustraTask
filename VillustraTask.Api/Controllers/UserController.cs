@@ -10,10 +10,12 @@ namespace VillustraTask.Api.Controllers
     public class UserController : ControllerBase
     {
         private readonly IUserRepository _userRepository;
+        private readonly IConfiguration _configuration;
 
-        public UserController(IUserRepository userRepository)
+        public UserController(IUserRepository userRepository, IConfiguration configuration)
         {
             _userRepository = userRepository;
+            _configuration = configuration;
         }
 
         // GET: api/User/{userId}
@@ -25,31 +27,44 @@ namespace VillustraTask.Api.Controllers
             {
                 return NotFound();
             }
-            return Ok(user);
+
+            // Do not return password in response
+            return Ok(new
+            {
+                user.UserId,
+                user.FullName,
+                user.DesignationId,
+                user.ProfilePicture
+            });
         }
 
         // POST: api/User/register
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] Userlogin user)
         {
-            // TODO: Hash the password before saving
+            if (string.IsNullOrWhiteSpace(user.Password))
+            {
+                return BadRequest(new { message = "Password is required." });
+            }
+
             var result = await _userRepository.InsertUserAsync(user);
+
             if (result > 0)
             {
                 return Ok(new { message = "User registered successfully." });
             }
+
             return BadRequest(new { message = "Error registering user." });
         }
+
 
         // POST: api/User/login
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] Userlogin loginRequest)
         {
-            // Retrieve user details
-            var user = await _userRepository.GetUserByIdAsync(loginRequest.UserId);
-            if (user == null || user.Password != loginRequest.Password)
+            var user = await _userRepository.AuthenticateUserAsync(loginRequest.UserId, loginRequest.Password);
+            if (user == null)
             {
-                // In production, use hashed password verification
                 return Unauthorized(new { message = "Invalid credentials." });
             }
 
@@ -58,12 +73,8 @@ namespace VillustraTask.Api.Controllers
                 return Unauthorized(new { message = "User is locked." });
             }
 
-            // Generate JWT token 
-            var token = JwtHelper.GenerateJwtToken(user,
-                issuer: HttpContext.RequestServices.GetRequiredService<IConfiguration>()["JwtSettings:Issuer"],
-                audience: HttpContext.RequestServices.GetRequiredService<IConfiguration>()["JwtSettings:Audience"],
-                secretKey: HttpContext.RequestServices.GetRequiredService<IConfiguration>()["JwtSettings:Secret"],
-                expiryInMinutes: int.Parse(HttpContext.RequestServices.GetRequiredService<IConfiguration>()["JwtSettings:ExpiryInMinutes"]));
+            // Generate JWT using _configuration
+            var token = JwtHelper.GenerateJwtToken(user, _configuration);
 
             return Ok(new { token });
         }

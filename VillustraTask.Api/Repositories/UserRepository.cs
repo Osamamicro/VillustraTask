@@ -3,8 +3,6 @@ using Microsoft.Data.SqlClient;
 using System.Data;
 using VillustraTask.Api.Interfaces;
 using VillustraTask.Api.Models;
-using BCrypt.Net;
-
 
 namespace VillustraTask.Api.Repositories
 {
@@ -26,6 +24,7 @@ namespace VillustraTask.Api.Repositories
             var query = "EXEC dbo.sp_GetUserById @UserId";
             return await connection.QueryFirstOrDefaultAsync<Userlogin>(query, new { UserId = userId });
         }
+
         public async Task<Userlogin?> AuthenticateUserAsync(string userId, string password)
         {
             using var connection = CreateConnection();
@@ -33,6 +32,7 @@ namespace VillustraTask.Api.Repositories
             var query = "EXEC dbo.sp_GetUserById @UserId";
             var user = await connection.QueryFirstOrDefaultAsync<Userlogin>(query, new { UserId = userId });
 
+            // Verify hashed password
             if (user == null || !BCrypt.Net.BCrypt.Verify(password, user.Password))
             {
                 return null; // Invalid credentials
@@ -49,11 +49,11 @@ namespace VillustraTask.Api.Repositories
             user.Password = BCrypt.Net.BCrypt.HashPassword(user.Password);
 
             var query = @"EXEC dbo.sp_InsertUserlogin 
-                  @UserId, @Password, @FullName, @DesignationId, @ProfilePicture, @CreatedBy";
+              @UserId, @Password, @FullName, @DesignationId, 
+              @ProfilePicture, @CreatedBy, @Islocked, @IsLoggedIn";
 
             return await connection.ExecuteAsync(query, user);
+
         }
-
-
     }
 }

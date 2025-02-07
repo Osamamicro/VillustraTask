@@ -3,8 +3,9 @@
 AS
 BEGIN
     SET NOCOUNT ON;
+    
     BEGIN TRY
-        SELECT *
+        SELECT UserId, FullName, DesignationId, ProfilePicture, CreatedBy, CreatedDate, UpdatedBy, UpdatedDate
         FROM dbo.Userlogin
         WHERE UserId = @UserId;
     END TRY

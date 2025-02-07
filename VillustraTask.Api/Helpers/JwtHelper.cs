@@ -1,15 +1,25 @@
-﻿using Microsoft.IdentityModel.Tokens;
+﻿using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
 using VillustraTask.Api.Models;
 
 namespace VillustraTask.Api.Helpers
 {
     public static class JwtHelper
     {
-        public static string GenerateJwtToken(Userlogin user, string issuer, string audience, string secretKey, int expiryInMinutes)
+        public static string GenerateJwtToken(Userlogin user, IConfiguration configuration)
         {
+            var issuer = configuration["JwtSettings:Issuer"];
+            var audience = configuration["JwtSettings:Audience"];
+            var secretKey = configuration["JwtSettings:Secret"];
+            var expiryInMinutes = int.Parse(configuration["JwtSettings:ExpiryInMinutes"]);
+
+            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));
+            var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+
             var claims = new[]
             {
                 new Claim(JwtRegisteredClaimNames.Sub, user.UserId),
@@ -17,16 +27,12 @@ namespace VillustraTask.Api.Helpers
                 new Claim("fullName", user.FullName)
             };
 
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));
-            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-
             var token = new JwtSecurityToken(
-                issuer: issuer,
-                audience: audience,
-                claims: claims,
-                expires: DateTime.Now.AddMinutes(expiryInMinutes),
-                signingCredentials: creds
-            );
+                issuer,
+                audience,
+                claims,
+                expires: DateTime.UtcNow.AddMinutes(expiryInMinutes),
+                signingCredentials: credentials);
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }

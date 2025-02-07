@@ -1,11 +1,10 @@
 ﻿-- SeedData.sql
----HH
 USE VillustraTask;
 GO
 
 -- Insert a sample user
 INSERT INTO dbo.Userlogin (UserId, Password, FullName, DesignationId, Islocked, IsLoggedIn, CreatedBy)
-VALUES ('sampleuser@example.com', 'P@ssw0rd', 'Sample User', 1, 0, 0, 'system');
+VALUES ('sampleuser@example.com', '$2a$12$EXAMPLEHASHVALUE1234567890abcdefghi', 'Sample User', 1, 0, 0, 'system');
 GO
 
 -- Insert a sample task

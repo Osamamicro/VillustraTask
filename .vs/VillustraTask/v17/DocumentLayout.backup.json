@@ -1,43 +1,62 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\moi11684\\source\\repos\\VillustraTask\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\osama\\Documents\\GitHub\\VillustraTask\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3C73A407-90B4-4BB3-B47B-6C6B0535750A}|VillustraTask.Api\\VillustraTask.Api.csproj|c:\\users\\osama\\documents\\github\\villustratask\\villustratask.api\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C73A407-90B4-4BB3-B47B-6C6B0535750A}|VillustraTask.Api\\VillustraTask.Api.csproj|solutionrelative:villustratask.api\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C73A407-90B4-4BB3-B47B-6C6B0535750A}|VillustraTask.Api\\VillustraTask.Api.csproj|c:\\users\\osama\\documents\\github\\villustratask\\villustratask.api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C73A407-90B4-4BB3-B47B-6C6B0535750A}|VillustraTask.Api\\VillustraTask.Api.csproj|solutionrelative:villustratask.api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
-      "Orientation": 1,
+      "Orientation": 0,
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedHeight": 303,
-          "SelectedChildIndex": -1,
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:129:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+              "Name": "ST:128:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\osama\\Documents\\GitHub\\VillustraTask\\VillustraTask.Api\\Repositories\\UserRepository.cs",
+              "RelativeDocumentMoniker": "VillustraTask.Api\\Repositories\\UserRepository.cs",
+              "ToolTip": "C:\\Users\\osama\\Documents\\GitHub\\VillustraTask\\VillustraTask.Api\\Repositories\\UserRepository.cs",
+              "RelativeToolTip": "VillustraTask.Api\\Repositories\\UserRepository.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAADwvzkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-07T21:47:42.551Z",
+              "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:129:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\osama\\Documents\\GitHub\\VillustraTask\\VillustraTask.Api\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "VillustraTask.Api\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\osama\\Documents\\GitHub\\VillustraTask\\VillustraTask.Api\\Controllers\\UserController.cs",
+              "RelativeToolTip": "VillustraTask.Api\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-07T21:45:27.561Z",
+              "EditorCaption": ""
             }
           ]
         }
