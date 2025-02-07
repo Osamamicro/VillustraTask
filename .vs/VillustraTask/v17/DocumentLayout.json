@@ -1,7 +1,68 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\moi11684\\source\\repos\\VillustraTask\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3C73A407-90B4-4BB3-B47B-6C6B0535750A}|VillustraTask.Api\\VillustraTask.Api.csproj|c:\\users\\moi11684\\source\\repos\\villustratask\\villustratask.api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C73A407-90B4-4BB3-B47B-6C6B0535750A}|VillustraTask.Api\\VillustraTask.Api.csproj|solutionrelative:villustratask.api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C73A407-90B4-4BB3-B47B-6C6B0535750A}|VillustraTask.Api\\VillustraTask.Api.csproj|c:\\users\\moi11684\\source\\repos\\villustratask\\villustratask.api\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C73A407-90B4-4BB3-B47B-6C6B0535750A}|VillustraTask.Api\\VillustraTask.Api.csproj|solutionrelative:villustratask.api\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C73A407-90B4-4BB3-B47B-6C6B0535750A}|VillustraTask.Api\\VillustraTask.Api.csproj|c:\\users\\moi11684\\source\\repos\\villustratask\\villustratask.api\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C73A407-90B4-4BB3-B47B-6C6B0535750A}|VillustraTask.Api\\VillustraTask.Api.csproj|solutionrelative:villustratask.api\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C73A407-90B4-4BB3-B47B-6C6B0535750A}|VillustraTask.Api\\VillustraTask.Api.csproj|c:\\users\\moi11684\\source\\repos\\villustratask\\villustratask.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C73A407-90B4-4BB3-B47B-6C6B0535750A}|VillustraTask.Api\\VillustraTask.Api.csproj|solutionrelative:villustratask.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C73A407-90B4-4BB3-B47B-6C6B0535750A}|VillustraTask.Api\\VillustraTask.Api.csproj|c:\\users\\moi11684\\source\\repos\\villustratask\\villustratask.api\\helpers\\jwthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C73A407-90B4-4BB3-B47B-6C6B0535750A}|VillustraTask.Api\\VillustraTask.Api.csproj|solutionrelative:villustratask.api\\helpers\\jwthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C73A407-90B4-4BB3-B47B-6C6B0535750A}|VillustraTask.Api\\VillustraTask.Api.csproj|c:\\users\\moi11684\\source\\repos\\villustratask\\villustratask.api\\controllers\\taskcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C73A407-90B4-4BB3-B47B-6C6B0535750A}|VillustraTask.Api\\VillustraTask.Api.csproj|solutionrelative:villustratask.api\\controllers\\taskcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C73A407-90B4-4BB3-B47B-6C6B0535750A}|VillustraTask.Api\\VillustraTask.Api.csproj|c:\\users\\moi11684\\source\\repos\\villustratask\\villustratask.api\\repositories\\taskrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C73A407-90B4-4BB3-B47B-6C6B0535750A}|VillustraTask.Api\\VillustraTask.Api.csproj|solutionrelative:villustratask.api\\repositories\\taskrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C73A407-90B4-4BB3-B47B-6C6B0535750A}|VillustraTask.Api\\VillustraTask.Api.csproj|c:\\users\\moi11684\\source\\repos\\villustratask\\villustratask.api\\interfaces\\itaskrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C73A407-90B4-4BB3-B47B-6C6B0535750A}|VillustraTask.Api\\VillustraTask.Api.csproj|solutionrelative:villustratask.api\\interfaces\\itaskrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C73A407-90B4-4BB3-B47B-6C6B0535750A}|VillustraTask.Api\\VillustraTask.Api.csproj|c:\\users\\moi11684\\source\\repos\\villustratask\\villustratask.api\\models\\taskitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C73A407-90B4-4BB3-B47B-6C6B0535750A}|VillustraTask.Api\\VillustraTask.Api.csproj|solutionrelative:villustratask.api\\models\\taskitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C73A407-90B4-4BB3-B47B-6C6B0535750A}|VillustraTask.Api\\VillustraTask.Api.csproj|c:\\users\\moi11684\\source\\repos\\villustratask\\villustratask.api\\models\\userlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C73A407-90B4-4BB3-B47B-6C6B0535750A}|VillustraTask.Api\\VillustraTask.Api.csproj|solutionrelative:villustratask.api\\models\\userlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C73A407-90B4-4BB3-B47B-6C6B0535750A}|VillustraTask.Api\\VillustraTask.Api.csproj|c:\\users\\moi11684\\source\\repos\\villustratask\\villustratask.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{3C73A407-90B4-4BB3-B47B-6C6B0535750A}|VillustraTask.Api\\VillustraTask.Api.csproj|solutionrelative:villustratask.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\moi11684\\source\\repos\\VillustraTask\\VillustraTask.Database\\bin\\Debug\\VillustraTask.Database.publish.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:VillustraTask.Database\\bin\\Debug\\VillustraTask.Database.publish.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C73A407-90B4-4BB3-B47B-6C6B0535750A}|VillustraTask.Api\\VillustraTask.Api.csproj|c:\\users\\moi11684\\source\\repos\\villustratask\\villustratask.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{3C73A407-90B4-4BB3-B47B-6C6B0535750A}|VillustraTask.Api\\VillustraTask.Api.csproj|solutionrelative:villustratask.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\moi11684\\source\\repos\\VillustraTask\\VillustraTask.Database\\bin\\Debug\\VillustraTask.Database.publish.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:VillustraTask.Database\\bin\\Debug\\VillustraTask.Database.publish.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\moi11684\\source\\repos\\VillustraTask\\VillustraTask.Database\\bin\\Debug\\VillustraTask.Database.publish.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|ResultFrame",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:VillustraTask.Database\\bin\\Debug\\VillustraTask.Database.publish.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|ResultFrame"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 1,
@@ -9,7 +70,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 303,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,6 +99,173 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "JwtHelper.cs",
+              "DocumentMoniker": "C:\\Users\\moi11684\\source\\repos\\VillustraTask\\VillustraTask.Api\\Helpers\\JwtHelper.cs",
+              "RelativeDocumentMoniker": "VillustraTask.Api\\Helpers\\JwtHelper.cs",
+              "ToolTip": "C:\\Users\\moi11684\\source\\repos\\VillustraTask\\VillustraTask.Api\\Helpers\\JwtHelper.cs",
+              "RelativeToolTip": "VillustraTask.Api\\Helpers\\JwtHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-06T11:47:18.459Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TaskController.cs",
+              "DocumentMoniker": "C:\\Users\\moi11684\\source\\repos\\VillustraTask\\VillustraTask.Api\\Controllers\\TaskController.cs",
+              "RelativeDocumentMoniker": "VillustraTask.Api\\Controllers\\TaskController.cs",
+              "ToolTip": "C:\\Users\\moi11684\\source\\repos\\VillustraTask\\VillustraTask.Api\\Controllers\\TaskController.cs",
+              "RelativeToolTip": "VillustraTask.Api\\Controllers\\TaskController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-06T11:46:48.029Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\moi11684\\source\\repos\\VillustraTask\\VillustraTask.Api\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "VillustraTask.Api\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\moi11684\\source\\repos\\VillustraTask\\VillustraTask.Api\\Controllers\\UserController.cs",
+              "RelativeToolTip": "VillustraTask.Api\\Controllers\\UserController.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAQwCwAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-06T11:46:23.309Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\moi11684\\source\\repos\\VillustraTask\\VillustraTask.Api\\Program.cs",
+              "RelativeDocumentMoniker": "VillustraTask.Api\\Program.cs",
+              "ToolTip": "C:\\Users\\moi11684\\source\\repos\\VillustraTask\\VillustraTask.Api\\Program.cs",
+              "RelativeToolTip": "VillustraTask.Api\\Program.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAACsAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-06T11:42:39.438Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IUserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\moi11684\\source\\repos\\VillustraTask\\VillustraTask.Api\\Interfaces\\IUserRepository.cs",
+              "RelativeDocumentMoniker": "VillustraTask.Api\\Interfaces\\IUserRepository.cs",
+              "ToolTip": "C:\\Users\\moi11684\\source\\repos\\VillustraTask\\VillustraTask.Api\\Interfaces\\IUserRepository.cs",
+              "RelativeToolTip": "VillustraTask.Api\\Interfaces\\IUserRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-06T11:44:16.44Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\moi11684\\source\\repos\\VillustraTask\\VillustraTask.Api\\Repositories\\UserRepository.cs",
+              "RelativeDocumentMoniker": "VillustraTask.Api\\Repositories\\UserRepository.cs",
+              "ToolTip": "C:\\Users\\moi11684\\source\\repos\\VillustraTask\\VillustraTask.Api\\Repositories\\UserRepository.cs",
+              "RelativeToolTip": "VillustraTask.Api\\Repositories\\UserRepository.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAUwBwAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-06T11:45:17.637Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "TaskRepository.cs",
+              "DocumentMoniker": "C:\\Users\\moi11684\\source\\repos\\VillustraTask\\VillustraTask.Api\\Repositories\\TaskRepository.cs",
+              "RelativeDocumentMoniker": "VillustraTask.Api\\Repositories\\TaskRepository.cs",
+              "ToolTip": "C:\\Users\\moi11684\\source\\repos\\VillustraTask\\VillustraTask.Api\\Repositories\\TaskRepository.cs",
+              "RelativeToolTip": "VillustraTask.Api\\Repositories\\TaskRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-06T11:45:39.195Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ITaskRepository.cs",
+              "DocumentMoniker": "C:\\Users\\moi11684\\source\\repos\\VillustraTask\\VillustraTask.Api\\Interfaces\\ITaskRepository.cs",
+              "RelativeDocumentMoniker": "VillustraTask.Api\\Interfaces\\ITaskRepository.cs",
+              "ToolTip": "C:\\Users\\moi11684\\source\\repos\\VillustraTask\\VillustraTask.Api\\Interfaces\\ITaskRepository.cs",
+              "RelativeToolTip": "VillustraTask.Api\\Interfaces\\ITaskRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-06T11:44:41.873Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "TaskItem.cs",
+              "DocumentMoniker": "C:\\Users\\moi11684\\source\\repos\\VillustraTask\\VillustraTask.Api\\Models\\TaskItem.cs",
+              "RelativeDocumentMoniker": "VillustraTask.Api\\Models\\TaskItem.cs",
+              "ToolTip": "C:\\Users\\moi11684\\source\\repos\\VillustraTask\\VillustraTask.Api\\Models\\TaskItem.cs",
+              "RelativeToolTip": "VillustraTask.Api\\Models\\TaskItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAUwBEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-06T11:43:47.705Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Userlogin.cs",
+              "DocumentMoniker": "C:\\Users\\moi11684\\source\\repos\\VillustraTask\\VillustraTask.Api\\Models\\Userlogin.cs",
+              "RelativeDocumentMoniker": "VillustraTask.Api\\Models\\Userlogin.cs",
+              "ToolTip": "C:\\Users\\moi11684\\source\\repos\\VillustraTask\\VillustraTask.Api\\Models\\Userlogin.cs",
+              "RelativeToolTip": "VillustraTask.Api\\Models\\Userlogin.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAUwBEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-06T11:43:25.768Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\moi11684\\source\\repos\\VillustraTask\\VillustraTask.Api\\appsettings.json",
+              "RelativeDocumentMoniker": "VillustraTask.Api\\appsettings.json",
+              "ToolTip": "C:\\Users\\moi11684\\source\\repos\\VillustraTask\\VillustraTask.Api\\appsettings.json",
+              "RelativeToolTip": "VillustraTask.Api\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAABgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-02-06T11:31:20.437Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "VillustraTask.Database.publish.sql ",
+              "DocumentMoniker": "C:\\Users\\moi11684\\source\\repos\\VillustraTask\\VillustraTask.Database\\bin\\Debug\\VillustraTask.Database.publish.sql",
+              "RelativeDocumentMoniker": "VillustraTask.Database\\bin\\Debug\\VillustraTask.Database.publish.sql",
+              "ToolTip": "VillustraTask.Database.publish.sql ",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-02-06T11:20:06.489Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\moi11684\\source\\repos\\VillustraTask\\VillustraTask.Api\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "VillustraTask.Api\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\moi11684\\source\\repos\\VillustraTask\\VillustraTask.Api\\Properties\\launchSettings.json",
+              "RelativeToolTip": "VillustraTask.Api\\Properties\\launchSettings.json",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-02-06T11:10:42.096Z",
+              "EditorCaption": ""
             }
           ]
         }
