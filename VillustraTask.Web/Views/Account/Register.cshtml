@@ -1,0 +1,39 @@
+﻿@model RegisterUserViewModel
+
+<div class="container mt-5">
+    <h3 class="text-center">Register New User</h3>
+    <form asp-action="Register" method="post">
+        <div class="form-group">
+            <label asp-for="FullName">Full Name</label>
+            <input asp-for="FullName" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Email">Email</label>
+            <input asp-for="Email" type="email" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Password">Password</label>
+            <input asp-for="Password" type="password" class="form-control" required />
+        </div>
+
+        <!-- Designation Dropdown -->
+        <div class="form-group">
+            <label asp-for="DesignationId">Select Designation</label>
+            <select asp-for="DesignationId" asp-items="Model.DesignationList" class="form-control select2">
+                <option value="">-- Select Designation --</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-3">Register</button>
+    </form>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('.select2').select2({ placeholder: "Select Designation" });
+        });
+    </script>
+}

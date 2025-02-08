@@ -30,7 +30,7 @@ namespace VillustraTask.Web.Services
         public bool ValidateCaptcha(string userInput, HttpContext context)
         {
             var storedCaptcha = context.Session.GetString("CaptchaCode");
-            return storedCaptcha != null && storedCaptcha == userInput;
+            return !string.IsNullOrEmpty(storedCaptcha) && storedCaptcha == userInput;
         }
     }
 }

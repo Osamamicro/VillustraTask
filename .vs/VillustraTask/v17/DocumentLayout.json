@@ -1,129 +1,157 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\osama\\Documents\\GitHub\\VillustraTask\\",
+  "WorkspaceRootPath": "C:\\Users\\moi11684\\source\\repos\\VillustraTask\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AB1BB1EF-596A-4E94-BA0B-D05A6C39517C}|VillustraTask.Web\\VillustraTask.Web.csproj|c:\\users\\osama\\documents\\github\\villustratask\\villustratask.web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{AB1BB1EF-596A-4E94-BA0B-D05A6C39517C}|VillustraTask.Web\\VillustraTask.Web.csproj|c:\\users\\moi11684\\source\\repos\\villustratask\\villustratask.web\\wwwroot\\lib\\datatables\\images\\sort_desc_disabled.png||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{AB1BB1EF-596A-4E94-BA0B-D05A6C39517C}|VillustraTask.Web\\VillustraTask.Web.csproj|solutionrelative:villustratask.web\\wwwroot\\lib\\datatables\\images\\sort_desc_disabled.png||{177559E0-D141-11D0-92DF-00A0C9138C45}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB1BB1EF-596A-4E94-BA0B-D05A6C39517C}|VillustraTask.Web\\VillustraTask.Web.csproj|c:\\users\\moi11684\\source\\repos\\villustratask\\villustratask.web\\wwwroot\\lib\\datatables\\images\\sort_desc.png||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{AB1BB1EF-596A-4E94-BA0B-D05A6C39517C}|VillustraTask.Web\\VillustraTask.Web.csproj|solutionrelative:villustratask.web\\wwwroot\\lib\\datatables\\images\\sort_desc.png||{177559E0-D141-11D0-92DF-00A0C9138C45}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB1BB1EF-596A-4E94-BA0B-D05A6C39517C}|VillustraTask.Web\\VillustraTask.Web.csproj|c:\\users\\moi11684\\source\\repos\\villustratask\\villustratask.web\\wwwroot\\lib\\datatables\\images\\sort_both.png||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{AB1BB1EF-596A-4E94-BA0B-D05A6C39517C}|VillustraTask.Web\\VillustraTask.Web.csproj|solutionrelative:villustratask.web\\wwwroot\\lib\\datatables\\images\\sort_both.png||{177559E0-D141-11D0-92DF-00A0C9138C45}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB1BB1EF-596A-4E94-BA0B-D05A6C39517C}|VillustraTask.Web\\VillustraTask.Web.csproj|c:\\users\\moi11684\\source\\repos\\villustratask\\villustratask.web\\wwwroot\\lib\\datatables\\images\\sort_asc_disabled.png||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{AB1BB1EF-596A-4E94-BA0B-D05A6C39517C}|VillustraTask.Web\\VillustraTask.Web.csproj|solutionrelative:villustratask.web\\wwwroot\\lib\\datatables\\images\\sort_asc_disabled.png||{177559E0-D141-11D0-92DF-00A0C9138C45}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB1BB1EF-596A-4E94-BA0B-D05A6C39517C}|VillustraTask.Web\\VillustraTask.Web.csproj|c:\\users\\moi11684\\source\\repos\\villustratask\\villustratask.web\\wwwroot\\lib\\datatables\\images\\sort_asc.png||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{AB1BB1EF-596A-4E94-BA0B-D05A6C39517C}|VillustraTask.Web\\VillustraTask.Web.csproj|solutionrelative:villustratask.web\\wwwroot\\lib\\datatables\\images\\sort_asc.png||{177559E0-D141-11D0-92DF-00A0C9138C45}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB1BB1EF-596A-4E94-BA0B-D05A6C39517C}|VillustraTask.Web\\VillustraTask.Web.csproj|c:\\users\\moi11684\\source\\repos\\villustratask\\villustratask.web\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AB1BB1EF-596A-4E94-BA0B-D05A6C39517C}|VillustraTask.Web\\VillustraTask.Web.csproj|solutionrelative:villustratask.web\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB1BB1EF-596A-4E94-BA0B-D05A6C39517C}|VillustraTask.Web\\VillustraTask.Web.csproj|c:\\users\\moi11684\\source\\repos\\villustratask\\villustratask.web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{AB1BB1EF-596A-4E94-BA0B-D05A6C39517C}|VillustraTask.Web\\VillustraTask.Web.csproj|solutionrelative:villustratask.web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB1BB1EF-596A-4E94-BA0B-D05A6C39517C}|VillustraTask.Web\\VillustraTask.Web.csproj|c:\\users\\osama\\documents\\github\\villustratask\\villustratask.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB1BB1EF-596A-4E94-BA0B-D05A6C39517C}|VillustraTask.Web\\VillustraTask.Web.csproj|solutionrelative:villustratask.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB1BB1EF-596A-4E94-BA0B-D05A6C39517C}|VillustraTask.Web\\VillustraTask.Web.csproj|c:\\users\\osama\\documents\\github\\villustratask\\villustratask.web\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB1BB1EF-596A-4E94-BA0B-D05A6C39517C}|VillustraTask.Web\\VillustraTask.Web.csproj|solutionrelative:villustratask.web\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB1BB1EF-596A-4E94-BA0B-D05A6C39517C}|VillustraTask.Web\\VillustraTask.Web.csproj|c:\\users\\osama\\documents\\github\\villustratask\\villustratask.web\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AB1BB1EF-596A-4E94-BA0B-D05A6C39517C}|VillustraTask.Web\\VillustraTask.Web.csproj|solutionrelative:villustratask.web\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB1BB1EF-596A-4E94-BA0B-D05A6C39517C}|VillustraTask.Web\\VillustraTask.Web.csproj|c:\\users\\osama\\documents\\github\\villustratask\\villustratask.web\\views\\account\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB1BB1EF-596A-4E94-BA0B-D05A6C39517C}|VillustraTask.Web\\VillustraTask.Web.csproj|solutionrelative:villustratask.web\\views\\account\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB1BB1EF-596A-4E94-BA0B-D05A6C39517C}|VillustraTask.Web\\VillustraTask.Web.csproj|c:\\users\\osama\\documents\\github\\villustratask\\villustratask.web\\models\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB1BB1EF-596A-4E94-BA0B-D05A6C39517C}|VillustraTask.Web\\VillustraTask.Web.csproj|solutionrelative:villustratask.web\\models\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
     {
-      "Orientation": 0,
+      "Orientation": 1,
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "DockedHeight": 303,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "Name": "ST:129:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:128:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\osama\\Documents\\GitHub\\VillustraTask\\VillustraTask.Web\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "VillustraTask.Web\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\osama\\Documents\\GitHub\\VillustraTask\\VillustraTask.Web\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "VillustraTask.Web\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAzwDEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-08T01:54:27.909Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Login.cshtml.cs",
-              "DocumentMoniker": "C:\\Users\\osama\\Documents\\GitHub\\VillustraTask\\VillustraTask.Web\\Views\\Account\\Login.cshtml.cs",
-              "RelativeDocumentMoniker": "VillustraTask.Web\\Views\\Account\\Login.cshtml.cs",
-              "ToolTip": "C:\\Users\\osama\\Documents\\GitHub\\VillustraTask\\VillustraTask.Web\\Views\\Account\\Login.cshtml.cs",
-              "RelativeToolTip": "VillustraTask.Web\\Views\\Account\\Login.cshtml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-08T01:47:04.798Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "C:\\Users\\osama\\Documents\\GitHub\\VillustraTask\\VillustraTask.Web\\Views\\Account\\Login.cshtml",
-              "RelativeDocumentMoniker": "VillustraTask.Web\\Views\\Account\\Login.cshtml",
-              "ToolTip": "C:\\Users\\osama\\Documents\\GitHub\\VillustraTask\\VillustraTask.Web\\Views\\Account\\Login.cshtml",
-              "RelativeToolTip": "VillustraTask.Web\\Views\\Account\\Login.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-08T01:46:49.925Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "LoginViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\osama\\Documents\\GitHub\\VillustraTask\\VillustraTask.Web\\Models\\LoginViewModel.cs",
-              "RelativeDocumentMoniker": "VillustraTask.Web\\Models\\LoginViewModel.cs",
-              "ToolTip": "C:\\Users\\osama\\Documents\\GitHub\\VillustraTask\\VillustraTask.Web\\Models\\LoginViewModel.cs",
-              "RelativeToolTip": "VillustraTask.Web\\Models\\LoginViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-08T01:45:12.294Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "C:\\Users\\osama\\Documents\\GitHub\\VillustraTask\\VillustraTask.Web\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "VillustraTask.Web\\Controllers\\AccountController.cs",
-              "ToolTip": "C:\\Users\\osama\\Documents\\GitHub\\VillustraTask\\VillustraTask.Web\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "VillustraTask.Web\\Controllers\\AccountController.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAAADAAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-08T01:43:23.266Z",
-              "EditorCaption": ""
+              "Title": "sort_desc_disabled.png - PNG [19x19, 32 bit, PNG]",
+              "DocumentMoniker": "C:\\Users\\moi11684\\source\\repos\\VillustraTask\\VillustraTask.Web\\wwwroot\\lib\\datatables\\images\\sort_desc_disabled.png",
+              "RelativeDocumentMoniker": "VillustraTask.Web\\wwwroot\\lib\\datatables\\images\\sort_desc_disabled.png",
+              "ToolTip": "C:\\Users\\moi11684\\source\\repos\\VillustraTask\\VillustraTask.Web\\wwwroot\\lib\\datatables\\images\\sort_desc_disabled.png - PNG [19x19, 32 bit, PNG]",
+              "RelativeToolTip": "VillustraTask.Web\\wwwroot\\lib\\datatables\\images\\sort_desc_disabled.png - PNG [19x19, 32 bit, PNG]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2025-02-08T11:25:12.12Z",
+              "EditorCaption": " - PNG [19x19, 32 bit, PNG]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\osama\\Documents\\GitHub\\VillustraTask\\VillustraTask.Web\\Program.cs",
-              "RelativeDocumentMoniker": "VillustraTask.Web\\Program.cs",
-              "ToolTip": "C:\\Users\\osama\\Documents\\GitHub\\VillustraTask\\VillustraTask.Web\\Program.cs",
-              "RelativeToolTip": "VillustraTask.Web\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-08T01:38:35.696Z",
+              "Title": "sort_desc.png - PNG [19x19, 32 bit, PNG]",
+              "DocumentMoniker": "C:\\Users\\moi11684\\source\\repos\\VillustraTask\\VillustraTask.Web\\wwwroot\\lib\\datatables\\images\\sort_desc.png",
+              "RelativeDocumentMoniker": "VillustraTask.Web\\wwwroot\\lib\\datatables\\images\\sort_desc.png",
+              "ToolTip": "C:\\Users\\moi11684\\source\\repos\\VillustraTask\\VillustraTask.Web\\wwwroot\\lib\\datatables\\images\\sort_desc.png - PNG [19x19, 32 bit, PNG]",
+              "RelativeToolTip": "VillustraTask.Web\\wwwroot\\lib\\datatables\\images\\sort_desc.png - PNG [19x19, 32 bit, PNG]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2025-02-08T11:25:10.99Z",
+              "EditorCaption": " - PNG [19x19, 32 bit, PNG]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "sort_both.png - PNG [19x19, 32 bit, PNG]",
+              "DocumentMoniker": "C:\\Users\\moi11684\\source\\repos\\VillustraTask\\VillustraTask.Web\\wwwroot\\lib\\datatables\\images\\sort_both.png",
+              "RelativeDocumentMoniker": "VillustraTask.Web\\wwwroot\\lib\\datatables\\images\\sort_both.png",
+              "ToolTip": "C:\\Users\\moi11684\\source\\repos\\VillustraTask\\VillustraTask.Web\\wwwroot\\lib\\datatables\\images\\sort_both.png - PNG [19x19, 32 bit, PNG]",
+              "RelativeToolTip": "VillustraTask.Web\\wwwroot\\lib\\datatables\\images\\sort_both.png - PNG [19x19, 32 bit, PNG]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2025-02-08T11:25:10.18Z",
+              "EditorCaption": " - PNG [19x19, 32 bit, PNG]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "sort_asc_disabled.png - PNG [19x19, 32 bit, PNG]",
+              "DocumentMoniker": "C:\\Users\\moi11684\\source\\repos\\VillustraTask\\VillustraTask.Web\\wwwroot\\lib\\datatables\\images\\sort_asc_disabled.png",
+              "RelativeDocumentMoniker": "VillustraTask.Web\\wwwroot\\lib\\datatables\\images\\sort_asc_disabled.png",
+              "ToolTip": "C:\\Users\\moi11684\\source\\repos\\VillustraTask\\VillustraTask.Web\\wwwroot\\lib\\datatables\\images\\sort_asc_disabled.png - PNG [19x19, 32 bit, PNG]",
+              "RelativeToolTip": "VillustraTask.Web\\wwwroot\\lib\\datatables\\images\\sort_asc_disabled.png - PNG [19x19, 32 bit, PNG]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2025-02-08T11:25:09.374Z",
+              "EditorCaption": " - PNG [19x19, 32 bit, PNG]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "sort_asc.png - PNG [19x19, 32 bit, PNG]",
+              "DocumentMoniker": "C:\\Users\\moi11684\\source\\repos\\VillustraTask\\VillustraTask.Web\\wwwroot\\lib\\datatables\\images\\sort_asc.png",
+              "RelativeDocumentMoniker": "VillustraTask.Web\\wwwroot\\lib\\datatables\\images\\sort_asc.png",
+              "ToolTip": "C:\\Users\\moi11684\\source\\repos\\VillustraTask\\VillustraTask.Web\\wwwroot\\lib\\datatables\\images\\sort_asc.png - PNG [19x19, 32 bit, PNG]",
+              "RelativeToolTip": "VillustraTask.Web\\wwwroot\\lib\\datatables\\images\\sort_asc.png - PNG [19x19, 32 bit, PNG]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2025-02-08T11:25:07.893Z",
+              "EditorCaption": " - PNG [19x19, 32 bit, PNG]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\moi11684\\source\\repos\\VillustraTask\\VillustraTask.Web\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "VillustraTask.Web\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\moi11684\\source\\repos\\VillustraTask\\VillustraTask.Web\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "VillustraTask.Web\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-08T10:45:13.914Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\moi11684\\source\\repos\\VillustraTask\\VillustraTask.Web\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "VillustraTask.Web\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\moi11684\\source\\repos\\VillustraTask\\VillustraTask.Web\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "VillustraTask.Web\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAcwCkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-08T10:43:12.29Z",
               "EditorCaption": ""
             }
           ]

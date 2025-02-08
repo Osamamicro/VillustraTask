@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "VillustraTask.Api\\VillustraTask.Api.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "VillustraTask.Web\\VillustraTask.Web.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

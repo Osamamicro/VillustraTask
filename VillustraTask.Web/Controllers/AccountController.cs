@@ -1,20 +1,20 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Net.Http;
-using System.Threading.Tasks;
 using Newtonsoft.Json;
 using System.Text;
 using VillustraTask.Web.Models;
-using Microsoft.AspNetCore.Http;
+using VillustraTask.Web.Services;
 
 namespace VillustraTask.Web.Controllers
 {
     public class AccountController : Controller
     {
         private readonly HttpClient _httpClient;
+        private readonly CaptchaService _captchaService;
 
-        public AccountController(IHttpClientFactory httpClientFactory)
+        public AccountController(IHttpClientFactory httpClientFactory, CaptchaService captchaService)
         {
             _httpClient = httpClientFactory.CreateClient();
+            _captchaService = captchaService;
         }
 
         [HttpGet]
@@ -23,11 +23,26 @@ namespace VillustraTask.Web.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult GenerateCaptcha()
+        {
+            string captchaText;
+            var captchaBytes = _captchaService.GenerateCaptcha(out captchaText, HttpContext);
+            return File(captchaBytes, "image/png");
+        }
+
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
             if (!ModelState.IsValid)
                 return View(model);
+
+            // Validate Captcha
+            if (!_captchaService.ValidateCaptcha(model.CaptchaInput, HttpContext))
+            {
+                ViewBag.Error = "Captcha verification failed!";
+                return View(model);
+            }
 
             var json = JsonConvert.SerializeObject(model);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
@@ -49,11 +64,11 @@ namespace VillustraTask.Web.Controllers
             ViewBag.Error = "Invalid credentials!";
             return View(model);
         }
+
         public IActionResult Logout()
         {
             HttpContext.Session.Clear();
             return RedirectToAction("Login", "Account");
         }
-
     }
 }
