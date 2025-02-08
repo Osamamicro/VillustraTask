@@ -28,7 +28,6 @@ namespace VillustraTask.Api.Controllers
                 return NotFound();
             }
 
-            // Return only non-sensitive fields
             return Ok(new
             {
                 user.UserId,
@@ -47,7 +46,6 @@ namespace VillustraTask.Api.Controllers
                 return BadRequest(ModelState);
             }
 
-
             var user = new Userlogin
             {
                 UserId = registerRequest.UserId,
@@ -65,7 +63,7 @@ namespace VillustraTask.Api.Controllers
                 return Ok(new { message = "User registered successfully." });
             }
 
-            return BadRequest(new { message = "Error registering user." });
+            return BadRequest(new { message = "Error registering user. The user might already exist or an internal error occurred." });
         }
 
         // POST: api/User/login

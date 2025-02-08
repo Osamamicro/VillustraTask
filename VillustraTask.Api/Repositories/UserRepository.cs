@@ -29,6 +29,7 @@ namespace VillustraTask.Api.Repositories
             using var connection = CreateConnection();
             var query = "EXEC dbo.sp_AuthenticateUser @UserId";
             var user = await connection.QueryFirstOrDefaultAsync<Userlogin>(query, new { UserId = userId });
+
             if (user == null || !BCrypt.Net.BCrypt.Verify(password, user.Password))
             {
                 return null;
@@ -39,11 +40,33 @@ namespace VillustraTask.Api.Repositories
         public async Task<int> InsertUserAsync(Userlogin user)
         {
             using var connection = CreateConnection();
+
+            // Hash the password before inserting
             user.Password = BCrypt.Net.BCrypt.HashPassword(user.Password);
+
             var query = @"EXEC dbo.sp_InsertUserlogin 
-                          @UserId, @Password, @FullName, @DesignationId, 
-                          @ProfilePicture, @CreatedBy, @IsLocked, @IsLoggedIn";
-            return await connection.ExecuteAsync(query, user);
+                  @UserId, @Password, @FullName, @DesignationId, 
+                  @ProfilePicture, @CreatedBy, @IsLocked, @IsLoggedIn";
+
+            try
+            {
+                return await connection.QuerySingleAsync<int>(query, new
+                {
+                    user.UserId,
+                    user.Password,
+                    user.FullName,
+                    user.DesignationId,
+                    user.ProfilePicture,
+                    user.CreatedBy,
+                    user.IsLocked,
+                    user.IsLoggedIn
+                });
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine($"SQL Error: {ex.Message}");
+                return 0; // Return failure
+            }
         }
     }
 }
