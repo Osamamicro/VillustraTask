@@ -1,44 +1,54 @@
+﻿using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 using VillustraTask.Web.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-builder.Services.AddControllersWithViews();
-
-// Enable Sessions
-builder.Services.AddDistributedMemoryCache();
-builder.Services.AddSession(options =>
+builder.Services.AddAuthentication(options =>
 {
-    options.IdleTimeout = TimeSpan.FromMinutes(30); // Session timeout
-    options.Cookie.HttpOnly = true;
-    options.Cookie.IsEssential = true;
+    // Set the default scheme to cookies
+    options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+})
+.AddCookie(options =>
+{
+    options.LoginPath = "/Account/Login"; // Set your login path
+})
+.AddJwtBearer(options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        ValidIssuer = "VillustraTaskApi",
+        ValidAudience = "VillustraTaskClient",
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("p7J#6&^xB$9mG@!vR2zKqYtP3D8wNsFh")),
+        ClockSkew = TimeSpan.Zero
+    };
 });
 
-// Register Captcha Service
-builder.Services.AddSingleton<CaptchaService>();
-
-// Register Authentication
-builder.Services.AddAuthentication("Cookies")
-    .AddCookie("Cookies", options =>
-    {
-        options.LoginPath = "/Account/Login"; // Redirect to login if not authenticated
-        options.AccessDeniedPath = "/Account/Login"; // Redirect if access denied
-    });
+builder.Services.AddAuthorization();
+builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<CaptchaService>();
+builder.Services.AddSession();
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddHttpClient();
 
 var app = builder.Build();
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
 app.UseRouting();
-
-// Enable Authentication, Authorization, and Session Middleware
+app.UseSession();
 app.UseAuthentication();
 app.UseAuthorization();
-app.UseSession();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Account}/{action=Login}/{id?}"); // Default to login
+    pattern: "{controller=Account}/{action=Login}/{id?}");
 
 app.Run();

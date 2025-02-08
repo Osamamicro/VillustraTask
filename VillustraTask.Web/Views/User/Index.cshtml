@@ -1,0 +1,145 @@
+﻿@{
+    ViewData["Title"] = "User Management";
+}
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+<h2>User Management</h2>
+<button class="btn btn-primary mb-3" id="addUserBtn">Add User</button>
+
+<table id="userTable" class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Email</th>
+            <th>Full Name</th>
+            <th>Designation</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+</table>
+
+<!-- User Modal -->
+<div class="modal fade" id="userModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">User Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <!-- We'll store the email (primary key) here -->
+                <input type="hidden" id="userId">
+                <div class="mb-3">
+                    <label class="form-label">Full Name</label>
+                    <input type="text" id="fullName" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Email</label>
+                    <input type="email" id="email" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Designation</label>
+                    <select id="designationId" class="form-control">
+                        <option value="1">Account Manager</option>
+                        <option value="2">Project Manager</option>
+                        <option value="3">Escalation Manager</option>
+                        <option value="4">Delivery Manager</option>
+                        <option value="5">PMO</option>
+                        <option value="6">Software Engineer</option>
+                    </select>
+                </div>
+                <button class="btn btn-success" id="saveUserBtn">Save User</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            // Initialize DataTable with dataSrc set to "" so that it treats the plain JSON array as the data source.
+            let table = $('#userTable').DataTable({
+                ajax: {
+                    url: "/User/GetUsers",
+                    dataSrc: ""
+                },
+                columns: [
+                    { data: "userId" },      // Assuming userId is the email.
+                    { data: "fullName" },
+                    { data: "designationId" },
+                    {
+                        data: null,
+                        render: function (data) {
+                            return `<button class="btn btn-sm btn-warning editUser" data-id="${data.userId}">Edit</button>
+                                    <button class="btn btn-sm btn-danger deleteUser" data-id="${data.userId}">Delete</button>`;
+                        }
+                    }
+                ]
+            });
+
+            // "Add User" button: clear modal fields and open modal.
+            $('#addUserBtn').click(function () {
+                $('#userId').val('');
+                $('#fullName').val('');
+                $('#email').val('');
+                $('#designationId').val('1');
+                $('#userModal').modal('show');
+            });
+
+            // "Edit" button: fetch the user from the list and populate modal fields.
+            $('#userTable').on('click', '.editUser', function () {
+                let userId = $(this).data('id');
+                // Using the same endpoint to get all users; then find the specific user.
+                $.getJSON("/User/GetUsers", function (users) {
+                    let user = users.find(u => u.userId === userId);
+                    if (user) {
+                        $('#userId').val(user.userId);
+                        $('#fullName').val(user.fullName);
+                        $('#email').val(user.userId); // userId is email
+                        $('#designationId').val(user.designationId);
+                        $('#userModal').modal('show');
+                    }
+                });
+            });
+
+            // "Save User" button: prepare user data and call the SaveUser API.
+            $('#saveUserBtn').click(function () {
+                let userData = {
+                    // Use email field as userId
+                    userId: $('#email').val(),
+                    fullName: $('#fullName').val(),
+                    designationId: $('#designationId').val()
+                };
+                $.ajax({
+                    url: "/User/SaveUser",
+                    type: "POST",
+                    contentType: "application/json",
+                    data: JSON.stringify(userData),
+                    success: function () {
+                        $('#userModal').modal('hide');
+                        table.ajax.reload();
+                    },
+                    error: function () {
+                        alert("Error saving user.");
+                    }
+                });
+            });
+
+            // "Delete" button: confirm deletion and call the DeleteUser API.
+            $('#userTable').on('click', '.deleteUser', function () {
+                let userId = $(this).data('id');
+                if (confirm("Are you sure you want to delete this user?")) {
+                    $.ajax({
+                        url: `/User/DeleteUser?userId=${userId}`,
+                        type: "DELETE",
+                        success: function () {
+                            table.ajax.reload();
+                        },
+                        error: function () {
+                            alert("Error deleting user.");
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+}

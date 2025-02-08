@@ -1,0 +1,193 @@
+﻿@{
+    ViewData["Title"] = "Task Management";
+}
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+<h2>Task Management</h2>
+<button class="btn btn-primary mb-3" id="addTaskBtn">Add Task</button>
+
+<table id="taskTable" class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Task Name</th>
+            <th>Assigned To</th>
+            <th>Status</th>
+            <th>Priority</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+</table>
+
+<!-- Task Modal -->
+<div class="modal fade" id="taskModal" tabindex="-1" aria-labelledby="taskModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="taskModalLabel">Task Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Hidden field to store TaskId -->
+                <input type="hidden" id="taskId" />
+                <div class="mb-3">
+                    <label class="form-label">Task Name</label>
+                    <input type="text" id="taskName" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Task Description</label>
+                    <textarea id="taskDescription" class="form-control"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Assigned To</label>
+                    <input type="email" id="assignedTo" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Status</label>
+                    <select id="taskStatus" class="form-control">
+                        <option value="New">New</option>
+                        <option value="In Progress">In Progress</option>
+                        <option value="Completed">Completed</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Priority</label>
+                    <select id="taskPriority" class="form-control">
+                        <option value="Low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Created By</label>
+                    <input type="email" id="createdBy" class="form-control" />
+                </div>
+                <button class="btn btn-success" id="saveTaskBtn">Save Task</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            // Retrieve the JWT token from session using the injected HttpContextAccessor.
+            var token = '@(HttpContextAccessor.HttpContext.Session.GetString("JWTToken"))';
+
+            // Configure all AJAX requests to include the Authorization header with the token.
+            $.ajaxSetup({
+                beforeSend: function (xhr) {
+                    if (token) {
+                        xhr.setRequestHeader("Authorization", "Bearer " + token);
+                    }
+                }
+            });
+
+            // Initialize DataTable; use dataSrc: "" because the API returns a plain array.
+            var table = $('#taskTable').DataTable({
+                ajax: {
+                    url: "https://localhost:7001/api/Task/list",
+                    dataSrc: ""
+                },
+                columns: [
+                    { data: "taskId" },
+                    { data: "taskName" },
+                    { data: "assignedTo" },
+                    { data: "taskStatus" },
+                    { data: "taskPriority" },
+                    {
+                        data: null,
+                        render: function (data) {
+                            return `<button class="btn btn-sm btn-warning editTask" data-id="${data.taskId}">Edit</button>
+                                    <button class="btn btn-sm btn-danger deleteTask" data-id="${data.taskId}">Delete</button>`;
+                        }
+                    }
+                ]
+            });
+
+            // "Add Task" button click event: clear modal fields and show the modal.
+            $('#addTaskBtn').click(function () {
+                $('#taskId').val('');
+                $('#taskName').val('');
+                $('#taskDescription').val('');
+                $('#assignedTo').val('');
+                $('#taskStatus').val('New');
+                $('#taskPriority').val('Medium');
+                $('#createdBy').val('');
+                $('#taskModal').modal('show');
+            });
+
+            // "Edit" button click event: fetch task details and populate the modal.
+            $('#taskTable').on('click', '.editTask', function () {
+                var taskId = $(this).data('id');
+                // GET a single task via the API.
+                $.ajax({
+                    url: "https://localhost:7001/api/Task/" + taskId,
+                    method: "GET",
+                    success: function (task) {
+                        $('#taskId').val(task.taskId);
+                        $('#taskName').val(task.taskName);
+                        $('#taskDescription').val(task.taskDescription);
+                        $('#assignedTo').val(task.assignedTo);
+                        $('#taskStatus').val(task.taskStatus);
+                        $('#taskPriority').val(task.taskPriority);
+                        $('#createdBy').val(task.createdBy);
+                        $('#taskModal').modal('show');
+                    },
+                    error: function () {
+                        alert("Error retrieving task details.");
+                    }
+                });
+            });
+
+            // "Save Task" button click event: determine if creating or updating and call API accordingly.
+            $('#saveTaskBtn').click(function () {
+                var taskData = {
+                    taskId: $('#taskId').val() ? parseInt($('#taskId').val()) : 0,
+                    taskName: $('#taskName').val(),
+                    taskDescription: $('#taskDescription').val(),
+                    assignedTo: $('#assignedTo').val(),
+                    taskStatus: $('#taskStatus').val(),
+                    taskPriority: $('#taskPriority').val(),
+                    createdBy: $('#createdBy').val()
+                };
+
+                var requestType = taskData.taskId > 0 ? "PUT" : "POST";
+                var requestUrl = taskData.taskId > 0
+                    ? "https://localhost:7001/api/Task/update"
+                    : "https://localhost:7001/api/Task/create";
+
+                $.ajax({
+                    url: requestUrl,
+                    method: requestType,
+                    contentType: "application/json",
+                    data: JSON.stringify(taskData),
+                    success: function (response) {
+                        $('#taskModal').modal('hide');
+                        table.ajax.reload();
+                    },
+                    error: function () {
+                        alert("Error saving task.");
+                    }
+                });
+            });
+
+            // "Delete" button click event: confirm deletion and call the API.
+            $('#taskTable').on('click', '.deleteTask', function () {
+                var taskId = $(this).data('id');
+                if (confirm("Are you sure you want to delete this task?")) {
+                    $.ajax({
+                        url: "https://localhost:7001/api/Task/delete/" + taskId,
+                        method: "DELETE",
+                        success: function (response) {
+                            table.ajax.reload();
+                        },
+                        error: function () {
+                            alert("Error deleting task.");
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+}

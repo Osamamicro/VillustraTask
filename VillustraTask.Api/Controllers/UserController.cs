@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using System.Threading.Tasks;
 using VillustraTask.Api.Helpers;
 using VillustraTask.Api.Interfaces;
 using VillustraTask.Api.Models;
@@ -12,14 +14,25 @@ namespace VillustraTask.Api.Controllers
     {
         private readonly IUserRepository _userRepository;
         private readonly IConfiguration _configuration;
+        private readonly ILogger<UserController> _logger;
 
-        public UserController(IUserRepository userRepository, IConfiguration configuration)
+        public UserController(IUserRepository userRepository, IConfiguration configuration, ILogger<UserController> logger)
         {
             _userRepository = userRepository;
             _configuration = configuration;
+            _logger = logger;
+        }
+        [Authorize]
+        [HttpGet("profile")]
+        public IActionResult GetUserProfile()
+        {
+            var userId = User.Identity.Name;
+            return Ok(new { userId });
         }
 
-        // GET: api/User/{userId}
+        /// <summary>
+        /// Get user details by ID (Authenticated)
+        /// </summary>
         [Authorize]
         [HttpGet("{userId}")]
         public async Task<IActionResult> GetUser(string userId)
@@ -27,7 +40,8 @@ namespace VillustraTask.Api.Controllers
             var user = await _userRepository.GetUserByIdAsync(userId);
             if (user == null)
             {
-                return NotFound();
+                _logger.LogWarning($"User not found: {userId}");
+                return NotFound(new { message = "User not found." });
             }
 
             return Ok(new
@@ -38,8 +52,17 @@ namespace VillustraTask.Api.Controllers
                 user.ProfilePicture
             });
         }
-
-        // POST: api/User/register
+        // GetUsers
+        [Authorize]
+        [HttpGet]
+        public async Task<IActionResult> GetUsers()
+        {
+            var users = await _userRepository.GetUsersAsync();
+            return Ok(users);
+        }
+        /// <summary>
+        /// Register a new user
+        /// </summary>
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] RegisterUserRequest registerRequest)
         {
@@ -62,30 +85,34 @@ namespace VillustraTask.Api.Controllers
 
             if (result > 0)
             {
+                _logger.LogInformation($"New user registered: {registerRequest.UserId}");
                 return Ok(new { message = "User registered successfully." });
             }
 
+            _logger.LogWarning($"User registration failed for: {registerRequest.UserId}");
             return BadRequest(new { message = "Error registering user. The user might already exist or an internal error occurred." });
         }
 
-        // POST: api/User/login
+        /// <summary>
+        /// Authenticate user & generate JWT token
+        /// </summary>
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginRequest loginRequest)
         {
             var user = await _userRepository.AuthenticateUserAsync(loginRequest.UserId, loginRequest.Password);
             if (user == null)
             {
+                _logger.LogWarning($"Invalid login attempt: {loginRequest.UserId}");
                 return Unauthorized(new { message = "Invalid credentials." });
             }
 
             if (user.IsLocked)
             {
+                _logger.LogWarning($"Locked user attempted login: {loginRequest.UserId}");
                 return Unauthorized(new { message = "User is locked." });
             }
 
-            // Generate JWT using _configuration
             var token = JwtHelper.GenerateJwtToken(user, _configuration);
-
             return Ok(new { token });
         }
     }

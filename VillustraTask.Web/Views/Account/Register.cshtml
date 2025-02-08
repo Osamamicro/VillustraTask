@@ -18,22 +18,19 @@
             <input asp-for="Password" type="password" class="form-control" required />
         </div>
 
-        <!-- Designation Dropdown -->
+        <!-- Hardcoded Designation Dropdown -->
         <div class="form-group">
             <label asp-for="DesignationId">Select Designation</label>
-            <select asp-for="DesignationId" asp-items="Model.DesignationList" class="form-control select2">
+            <select asp-for="DesignationId" class="form-control">
                 <option value="">-- Select Designation --</option>
+                <option value="1">Software Engineer</option>
+                <option value="2">Project Manager</option>
+                <option value="3">HR Manager</option>
+                <option value="4">Business Analyst</option>
+                <option value="5">Team Lead</option>
             </select>
         </div>
 
         <button type="submit" class="btn btn-primary mt-3">Register</button>
     </form>
 </div>
-
-@section Scripts {
-    <script>
-        $(document).ready(function () {
-            $('.select2').select2({ placeholder: "Select Designation" });
-        });
-    </script>
-}

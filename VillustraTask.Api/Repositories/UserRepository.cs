@@ -1,18 +1,22 @@
 ﻿using Dapper;
 using Microsoft.Data.SqlClient;
 using System.Data;
+using System.Threading.Tasks;
 using VillustraTask.Api.Interfaces;
 using VillustraTask.Api.Models;
+using Microsoft.Extensions.Logging;
 
 namespace VillustraTask.Api.Repositories
 {
     public class UserRepository : IUserRepository
     {
         private readonly string _connectionString;
+        private readonly ILogger<UserRepository> _logger;
 
-        public UserRepository(IConfiguration configuration)
+        public UserRepository(IConfiguration configuration, ILogger<UserRepository> logger)
         {
             _connectionString = configuration.GetConnectionString("DefaultConnection");
+            _logger = logger;
         }
 
         private IDbConnection CreateConnection() => new SqlConnection(_connectionString);
@@ -21,6 +25,7 @@ namespace VillustraTask.Api.Repositories
         {
             using var connection = CreateConnection();
             var query = "EXEC dbo.sp_GetUserById @UserId";
+
             return await connection.QueryFirstOrDefaultAsync<Userlogin>(query, new { UserId = userId });
         }
 
@@ -32,41 +37,39 @@ namespace VillustraTask.Api.Repositories
 
             if (user == null || !BCrypt.Net.BCrypt.Verify(password, user.Password))
             {
+                _logger.LogWarning($"Invalid login attempt for User ID: {userId}");
                 return null;
             }
+
             return user;
         }
 
         public async Task<int> InsertUserAsync(Userlogin user)
         {
             using var connection = CreateConnection();
-
-            // Hash the password before inserting
-            user.Password = BCrypt.Net.BCrypt.HashPassword(user.Password);
+            user.Password = BCrypt.Net.BCrypt.HashPassword(user.Password); // Hash password
 
             var query = @"EXEC dbo.sp_InsertUserlogin 
-                  @UserId, @Password, @FullName, @DesignationId, 
-                  @ProfilePicture, @CreatedBy, @IsLocked, @IsLoggedIn";
+                          @UserId, @Password, @FullName, @DesignationId, 
+                          @ProfilePicture, @CreatedBy, @IsLocked, @IsLoggedIn";
 
             try
             {
-                return await connection.QuerySingleAsync<int>(query, new
-                {
-                    user.UserId,
-                    user.Password,
-                    user.FullName,
-                    user.DesignationId,
-                    user.ProfilePicture,
-                    user.CreatedBy,
-                    user.IsLocked,
-                    user.IsLoggedIn
-                });
+                return await connection.QuerySingleAsync<int>(query, user);
             }
             catch (SqlException ex)
             {
-                Console.WriteLine($"SQL Error: {ex.Message}");
+                _logger.LogError($"SQL Error: {ex.Message}");
                 return 0; // Return failure
             }
+        }
+        // GetUsersAsync
+        public async Task<IEnumerable<Userlogin>> GetUsersAsync()
+        {
+            using var connection = CreateConnection();
+            var query = "EXEC dbo.sp_GetUsers";
+
+            return await connection.QueryAsync<Userlogin>(query);
         }
     }
 }

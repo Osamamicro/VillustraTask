@@ -26,39 +26,34 @@ namespace VillustraTask.Api.Repositories
                           @TaskName, @TaskDescription, @TaskFile, 
                           @AssignedTo, @TaskStatus, @TaskPriority, 
                           @CreatedBy";
-
-            try
-            {
-                return await connection.QuerySingleAsync<int>(query, new
-                {
-                    task.TaskName,
-                    task.TaskDescription,
-                    task.TaskFile,
-                    task.AssignedTo,
-                    task.TaskStatus,
-                    task.TaskPriority,
-                    task.CreatedBy
-                });
-            }
-            catch (SqlException ex)
-            {
-                Console.WriteLine($"SQL Error: {ex.Message}");
-                return 0; // Return failure
-            }
+            return await connection.ExecuteAsync(query, task);
         }
 
         public async Task<IEnumerable<TaskItem>> GetAllTasksAsync()
         {
             using var connection = CreateConnection();
-            var query = "EXEC dbo.sp_GetAllTasks";
-            return await connection.QueryAsync<TaskItem>(query);
+            return await connection.QueryAsync<TaskItem>("EXEC dbo.sp_GetTasks");
         }
 
         public async Task<TaskItem> GetTaskByIdAsync(int taskId)
         {
             using var connection = CreateConnection();
-            var query = "EXEC dbo.sp_GetTaskById @TaskId";
-            return await connection.QueryFirstOrDefaultAsync<TaskItem>(query, new { TaskId = taskId });
+            return await connection.QueryFirstOrDefaultAsync<TaskItem>("EXEC dbo.sp_GetTaskById @TaskId", new { TaskId = taskId });
+        }
+
+        public async Task<int> UpdateTaskAsync(TaskItem task)
+        {
+            using var connection = CreateConnection();
+            var query = @"EXEC dbo.sp_UpdateTask 
+                  @TaskId, @TaskName, @TaskDescription, 
+                  @TaskFile, @AssignedTo, @TaskStatus, 
+                  @TaskPriority, @UpdatedBy";
+            return await connection.QuerySingleAsync<int>(query, task);
+        }
+        public async Task<int> DeleteTaskAsync(int taskId)
+        {
+            using var connection = CreateConnection();
+            return await connection.ExecuteAsync("EXEC dbo.sp_DeleteTask @TaskId", new { TaskId = taskId });
         }
     }
 }

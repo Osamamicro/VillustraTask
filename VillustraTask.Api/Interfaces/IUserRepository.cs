@@ -7,5 +7,6 @@ namespace VillustraTask.Api.Interfaces
         Task<Userlogin> GetUserByIdAsync(string userId);
         Task<int> InsertUserAsync(Userlogin user);
         Task<Userlogin?> AuthenticateUserAsync(string userId, string password);
+        Task<IEnumerable<Userlogin>> GetUsersAsync();
     }
 }

@@ -4,8 +4,10 @@ namespace VillustraTask.Api.Interfaces
 {
     public interface ITaskRepository
     {
-        Task<int> InsertTaskAsync(TaskItem task);
         Task<IEnumerable<TaskItem>> GetAllTasksAsync();
+        Task<int> InsertTaskAsync(TaskItem task);
         Task<TaskItem> GetTaskByIdAsync(int taskId);
+        Task<int> UpdateTaskAsync(TaskItem task);
+        Task<int> DeleteTaskAsync(int taskId);
     }
 }

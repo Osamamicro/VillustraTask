@@ -69,9 +69,14 @@
     <Build Include="Stored Procedures\sp_InsertTask.sql" />
     <Build Include="Stored Procedures\sp_InsertUserlogin.sql" />
     <Build Include="Stored Procedures\sp_AuthenticateUser.sql" />
+    <Build Include="Stored Procedures\sp_DeleteTask.sql" />
+    <Build Include="Stored Procedures\sp_GetTaskById.sql" />
+    <Build Include="Stored Procedures\sp_GetUsers.sql" />
+    <Build Include="Stored Procedures\sp_UpdateTask.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Database Scripts\CreateDatabase.sql" />
     <None Include="Data Seeding\SeedData.sql" />
+    <None Include="VillustraTask.Database.publish.xml" />
   </ItemGroup>
 </Project>

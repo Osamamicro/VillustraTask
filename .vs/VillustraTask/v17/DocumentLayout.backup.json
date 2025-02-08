@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\moi11684\\source\\repos\\VillustraTask\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AB1BB1EF-596A-4E94-BA0B-D05A6C39517C}|VillustraTask.Web\\VillustraTask.Web.csproj|c:\\users\\moi11684\\source\\repos\\villustratask\\villustratask.web\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AB1BB1EF-596A-4E94-BA0B-D05A6C39517C}|VillustraTask.Web\\VillustraTask.Web.csproj|solutionrelative:villustratask.web\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{3C73A407-90B4-4BB3-B47B-6C6B0535750A}|VillustraTask.Api\\VillustraTask.Api.csproj|c:\\users\\moi11684\\source\\repos\\villustratask\\villustratask.api\\controllers\\taskcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C73A407-90B4-4BB3-B47B-6C6B0535750A}|VillustraTask.Api\\VillustraTask.Api.csproj|solutionrelative:villustratask.api\\controllers\\taskcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB1BB1EF-596A-4E94-BA0B-D05A6C39517C}|VillustraTask.Web\\VillustraTask.Web.csproj|c:\\users\\moi11684\\source\\repos\\villustratask\\villustratask.web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AB1BB1EF-596A-4E94-BA0B-D05A6C39517C}|VillustraTask.Web\\VillustraTask.Web.csproj|solutionrelative:villustratask.web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{AB1BB1EF-596A-4E94-BA0B-D05A6C39517C}|VillustraTask.Web\\VillustraTask.Web.csproj|c:\\users\\moi11684\\source\\repos\\villustratask\\villustratask.web\\views\\task\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AB1BB1EF-596A-4E94-BA0B-D05A6C39517C}|VillustraTask.Web\\VillustraTask.Web.csproj|solutionrelative:villustratask.web\\views\\task\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -51,27 +51,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\moi11684\\source\\repos\\VillustraTask\\VillustraTask.Web\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "VillustraTask.Web\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\moi11684\\source\\repos\\VillustraTask\\VillustraTask.Web\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "VillustraTask.Web\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAABAAAAAAAAAAAAAcwCwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-08T10:45:13.914Z",
+              "Title": "TaskController.cs",
+              "DocumentMoniker": "C:\\Users\\moi11684\\source\\repos\\VillustraTask\\VillustraTask.Api\\Controllers\\TaskController.cs",
+              "RelativeDocumentMoniker": "VillustraTask.Api\\Controllers\\TaskController.cs",
+              "ToolTip": "C:\\Users\\moi11684\\source\\repos\\VillustraTask\\VillustraTask.Api\\Controllers\\TaskController.cs",
+              "RelativeToolTip": "VillustraTask.Api\\Controllers\\TaskController.cs",
+              "ViewState": "AgIAAH0AAAAAAAAAAAAiwJ0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-08T20:33:44.998Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\moi11684\\source\\repos\\VillustraTask\\VillustraTask.Web\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "VillustraTask.Web\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\moi11684\\source\\repos\\VillustraTask\\VillustraTask.Web\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "VillustraTask.Web\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAcwCkAAAAAAAAAAAAAAA==",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\moi11684\\source\\repos\\VillustraTask\\VillustraTask.Web\\Views\\Task\\Index.cshtml",
+              "RelativeDocumentMoniker": "VillustraTask.Web\\Views\\Task\\Index.cshtml",
+              "ToolTip": "C:\\Users\\moi11684\\source\\repos\\VillustraTask\\VillustraTask.Web\\Views\\Task\\Index.cshtml",
+              "RelativeToolTip": "VillustraTask.Web\\Views\\Task\\Index.cshtml",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAACcAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-08T10:43:12.29Z",
+              "WhenOpened": "2025-02-08T20:33:32.988Z",
               "EditorCaption": ""
             }
           ]
