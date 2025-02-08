@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using VillustraTask.Api.Helpers;
 using VillustraTask.Api.Interfaces;
 using VillustraTask.Api.Models;
@@ -19,6 +20,7 @@ namespace VillustraTask.Api.Controllers
         }
 
         // GET: api/User/{userId}
+        [Authorize]
         [HttpGet("{userId}")]
         public async Task<IActionResult> GetUser(string userId)
         {
@@ -68,7 +70,7 @@ namespace VillustraTask.Api.Controllers
 
         // POST: api/User/login
         [HttpPost("login")]
-        public async Task<IActionResult> Login([FromBody] Userlogin loginRequest)
+        public async Task<IActionResult> Login([FromBody] LoginRequest loginRequest)
         {
             var user = await _userRepository.AuthenticateUserAsync(loginRequest.UserId, loginRequest.Password);
             if (user == null)

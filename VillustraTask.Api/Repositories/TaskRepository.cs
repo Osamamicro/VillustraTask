@@ -26,7 +26,25 @@ namespace VillustraTask.Api.Repositories
                           @TaskName, @TaskDescription, @TaskFile, 
                           @AssignedTo, @TaskStatus, @TaskPriority, 
                           @CreatedBy";
-            return await connection.ExecuteAsync(query, task);
+
+            try
+            {
+                return await connection.QuerySingleAsync<int>(query, new
+                {
+                    task.TaskName,
+                    task.TaskDescription,
+                    task.TaskFile,
+                    task.AssignedTo,
+                    task.TaskStatus,
+                    task.TaskPriority,
+                    task.CreatedBy
+                });
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine($"SQL Error: {ex.Message}");
+                return 0; // Return failure
+            }
         }
 
         public async Task<IEnumerable<TaskItem>> GetAllTasksAsync()

@@ -1,4 +1,4 @@
-﻿ALTER PROCEDURE [dbo].[sp_InsertUserlogin]
+﻿Create PROCEDURE [dbo].[sp_InsertUserlogin]
     @UserId NVARCHAR(255),
     @Password NVARCHAR(500),  
     @FullName NVARCHAR(255),

@@ -1,5 +1,4 @@
-﻿
-CREATE PROCEDURE dbo.sp_InsertTask
+﻿Create PROCEDURE [dbo].[sp_InsertTask]
     @TaskName NVARCHAR(255),
     @TaskDescription NVARCHAR(MAX),
     @TaskFile NVARCHAR(500) = NULL,
@@ -10,6 +9,9 @@ CREATE PROCEDURE dbo.sp_InsertTask
 AS
 BEGIN
     SET NOCOUNT ON;
+    SET XACT_ABORT ON;
+
+    BEGIN TRANSACTION;
     BEGIN TRY
         INSERT INTO dbo.Tasks
         (
@@ -21,8 +23,14 @@ BEGIN
             @TaskName, @TaskDescription, @TaskFile, @AssignedTo,
             @TaskStatus, @TaskPriority, @CreatedBy, GETDATE()
         );
+
+        COMMIT TRANSACTION;
+
+        -- Return number of rows inserted (should be 1 if successful)
+        SELECT @@ROWCOUNT AS RowsAffected;
     END TRY
     BEGIN CATCH
+        ROLLBACK TRANSACTION;
         DECLARE @ErrorMessage NVARCHAR(4000) = ERROR_MESSAGE();
         RAISERROR(@ErrorMessage, 16, 1);
     END CATCH
