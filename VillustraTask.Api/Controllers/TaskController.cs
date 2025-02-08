@@ -1,5 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 using VillustraTask.Api.Interfaces;
 using VillustraTask.Api.Models;
 
@@ -7,32 +7,32 @@ namespace VillustraTask.Api.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    [Authorize] // Protect endpoints with JWT
     public class TaskController : ControllerBase
     {
         private readonly ITaskRepository _taskRepository;
+        private readonly IEmailService _emailService;
 
-        public TaskController(ITaskRepository taskRepository)
+        public TaskController(ITaskRepository taskRepository, IEmailService emailService)
         {
             _taskRepository = taskRepository;
+            _emailService = emailService;
         }
 
-        // GET: api/Task
-        [HttpGet]
-        public async Task<IActionResult> GetTasks()
-        {
-            var tasks = await _taskRepository.GetTasksAsync();
-            return Ok(tasks);
-        }
-
-        // POST: api/Task
-        [HttpPost]
+        [HttpPost("create")]
         public async Task<IActionResult> CreateTask([FromBody] TaskItem task)
         {
+            if (task == null)
+                return BadRequest("Invalid task data.");
+
             var result = await _taskRepository.InsertTaskAsync(task);
             if (result > 0)
             {
-                return Ok(new { message = "Task created successfully." });
+                var subject = $"New Task Assigned: {task.TaskName}";
+                var body = $"<p>You have been assigned a new task: <strong>{task.TaskName}</strong></p>" +
+                           $"<p>Description: {task.TaskDescription}</p>";
+                await _emailService.SendEmailAsync(task.AssignedTo, subject, body);
+
+                return Ok(new { message = "Task created and email sent successfully." });
             }
             return BadRequest(new { message = "Error creating task." });
         }

@@ -68,6 +68,7 @@
     <Build Include="Stored Procedures\sp_GetUserById.sql" />
     <Build Include="Stored Procedures\sp_InsertTask.sql" />
     <Build Include="Stored Procedures\sp_InsertUserlogin.sql" />
+    <Build Include="Stored Procedures\sp_AuthenticateUser.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Database Scripts\CreateDatabase.sql" />

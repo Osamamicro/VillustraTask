@@ -15,8 +15,7 @@ namespace VillustraTask.Api.Repositories
             _connectionString = configuration.GetConnectionString("DefaultConnection");
         }
 
-        private IDbConnection CreateConnection() =>
-            new SqlConnection(_connectionString);
+        private IDbConnection CreateConnection() => new SqlConnection(_connectionString);
 
         public async Task<Userlogin> GetUserByIdAsync(string userId)
         {
@@ -28,32 +27,23 @@ namespace VillustraTask.Api.Repositories
         public async Task<Userlogin?> AuthenticateUserAsync(string userId, string password)
         {
             using var connection = CreateConnection();
-
-            var query = "EXEC dbo.sp_GetUserById @UserId";
+            var query = "EXEC dbo.sp_AuthenticateUser @UserId";
             var user = await connection.QueryFirstOrDefaultAsync<Userlogin>(query, new { UserId = userId });
-
-            // Verify hashed password
             if (user == null || !BCrypt.Net.BCrypt.Verify(password, user.Password))
             {
-                return null; // Invalid credentials
+                return null;
             }
-
             return user;
         }
 
         public async Task<int> InsertUserAsync(Userlogin user)
         {
             using var connection = CreateConnection();
-
-            // Hash the password before storing it
             user.Password = BCrypt.Net.BCrypt.HashPassword(user.Password);
-
             var query = @"EXEC dbo.sp_InsertUserlogin 
-              @UserId, @Password, @FullName, @DesignationId, 
-              @ProfilePicture, @CreatedBy, @Islocked, @IsLoggedIn";
-
+                          @UserId, @Password, @FullName, @DesignationId, 
+                          @ProfilePicture, @CreatedBy, @IsLocked, @IsLoggedIn";
             return await connection.ExecuteAsync(query, user);
-
         }
     }
 }

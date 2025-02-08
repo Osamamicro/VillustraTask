@@ -3,7 +3,7 @@ USE VillustraTask;
 GO
 
 -- Insert a sample user
-INSERT INTO dbo.Userlogin (UserId, Password, FullName, DesignationId, Islocked, IsLoggedIn, CreatedBy)
+INSERT INTO dbo.Userlogin (UserId, Password, FullName, DesignationId, IsLocked, IsLoggedIn, CreatedBy)
 VALUES ('sampleuser@example.com', '$2a$12$EXAMPLEHASHVALUE1234567890abcdefghi', 'Sample User', 1, 0, 0, 'system');
 GO
 

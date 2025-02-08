@@ -1,10 +1,12 @@
 ﻿CREATE PROCEDURE dbo.sp_InsertUserlogin
     @UserId NVARCHAR(255),
-    @Password NVARCHAR(500),  -- Adjusted size to match table
+    @Password NVARCHAR(500),  
     @FullName NVARCHAR(255),
     @DesignationId INT = NULL,
     @ProfilePicture NVARCHAR(500) = NULL,
-    @CreatedBy NVARCHAR(255) = NULL
+    @CreatedBy NVARCHAR(255) = NULL,
+    @IsLocked BIT = 0,      
+    @IsLoggedIn BIT = 0 
 AS
 BEGIN
     SET NOCOUNT ON;
@@ -37,7 +39,7 @@ BEGIN
         VALUES
         (
             @UserId, @Password, @FullName, @DesignationId,
-            0, 0, @ProfilePicture, @CreatedBy, GETDATE()
+            @IsLocked, @IsLoggedIn, @ProfilePicture, @CreatedBy, GETDATE()
         );
 
         COMMIT TRANSACTION;

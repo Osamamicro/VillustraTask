@@ -28,7 +28,7 @@ namespace VillustraTask.Api.Controllers
                 return NotFound();
             }
 
-            // Do not return password in response
+            // Return only non-sensitive fields
             return Ok(new
             {
                 user.UserId,
@@ -40,12 +40,23 @@ namespace VillustraTask.Api.Controllers
 
         // POST: api/User/register
         [HttpPost("register")]
-        public async Task<IActionResult> Register([FromBody] Userlogin user)
+        public async Task<IActionResult> Register([FromBody] RegisterUserRequest registerRequest)
         {
-            if (string.IsNullOrWhiteSpace(user.Password))
+            if (!ModelState.IsValid)
             {
-                return BadRequest(new { message = "Password is required." });
+                return BadRequest(ModelState);
             }
+
+
+            var user = new Userlogin
+            {
+                UserId = registerRequest.UserId,
+                Password = registerRequest.Password,
+                FullName = registerRequest.FullName,
+                DesignationId = registerRequest.DesignationId,
+                ProfilePicture = registerRequest.ProfilePicture,
+                CreatedBy = registerRequest.UserId
+            };
 
             var result = await _userRepository.InsertUserAsync(user);
 
@@ -57,7 +68,6 @@ namespace VillustraTask.Api.Controllers
             return BadRequest(new { message = "Error registering user." });
         }
 
-
         // POST: api/User/login
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] Userlogin loginRequest)
@@ -68,7 +78,7 @@ namespace VillustraTask.Api.Controllers
                 return Unauthorized(new { message = "Invalid credentials." });
             }
 
-            if (user.Islocked)
+            if (user.IsLocked)
             {
                 return Unauthorized(new { message = "User is locked." });
             }
